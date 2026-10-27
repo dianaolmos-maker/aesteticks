@@ -561,6 +561,20 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=1086369954259982&ev=PageView&noscript=1"></noscript>
 <!-- End Meta Pixel -->
+<style>
+  /* Hero centrado: el texto arriba y el formulario de GHL debajo, a lo ancho.
+     El formulario de GHL pasa a dos columnas solo cuando su iframe mide 1025px o más. */
+  .hero .grid.grid-centered{grid-template-columns:1fr;justify-items:center;gap:clamp(36px,5vw,56px)}
+  .grid-centered > div:first-child{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
+  .grid-centered h1{max-width:22ch;margin-inline:auto}
+  .grid-centered .lead{margin-inline:auto}
+  .grid-centered .beam{width:100%;margin-inline:auto}
+  .grid-centered .chips{justify-content:center}
+  .grid-centered .ul{display:inline-block;text-align:left}
+  .hero .grid > .fcard-wide{grid-column:1/-1;justify-self:center;--fw:min(1120px,calc(100vw - 32px));width:var(--fw);max-width:none;margin-inline:calc((100% - var(--fw)) / 2);padding:clamp(16px,2vw,28px)}
+  .fcard-wide h3,.fcard-wide .sub{text-align:center}
+  .fcard-wide iframe{display:block;width:100%;min-height:900px}
+</style>
 </head>
 <body>
 <div class="rprog" aria-hidden="true"></div>
@@ -582,7 +596,7 @@ src="https://www.facebook.com/tr?id=1086369954259982&ev=PageView&noscript=1"></n
 <!-- HERO · impacto + captura. Único bloque con haz de luz. -->
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="grid">
+    <div class="grid grid-centered">
       <div>
         <p class="eyebrow">Mastery Aesthetics</p>
         <h1>Las mejores clínicas llenan su agenda sin pagar la pauta de su bolsillo. Y no pierden un solo paciente.</h1>
@@ -595,7 +609,7 @@ src="https://www.facebook.com/tr?id=1086369954259982&ev=PageView&noscript=1"></n
         </div>
       </div>
 
-      <div class="fcard" id="diagnostico"><span class="eglow"></span><span class="card-beam"></span>
+      <div class="fcard fcard-wide" id="diagnostico"><span class="eglow"></span><span class="card-beam"></span>
         <h3>Solicita tu diagnóstico de crecimiento</h3>
         <p class="sub">Cuéntanos de tu clínica y te escribimos o te llamamos para coordinar la sesión.</p>
 
